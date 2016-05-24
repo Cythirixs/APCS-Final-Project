@@ -1,4 +1,4 @@
-
+package src;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -187,8 +187,9 @@ public class WhiteCell extends Cell implements AI {
         while (it.hasNext()) {
             VirusGroup pair = it.next().getValue();
             int add = 0;
-            for (int j = 0; j < CellManager.sickValues.size(); j++) {
-                Cell c = CellManager.sickValues.get(j);
+            ArrayList<Cell> alsick = CellManager.getSickValues();
+            for (int j = 0; j < alsick.size(); j++) {
+                Cell c = alsick.get(j);
                 // System.out.println( c.getHealth() + "hhi" );
                 if (getDistance(c) <= sightRadius && getDistance(c) < closestSick) {
                     setCoord(c.getX(), c.getY());

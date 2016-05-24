@@ -1,3 +1,4 @@
+package src;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -157,9 +158,10 @@ public class Virus implements Locatable {
 
 		if (attacking)
 			return;
+		ArrayList<Cell> alred = CellManager.getRedValues();
 
-		for (int i = 0; i < CellManager.redValues.size(); i++) {
-			Cell c = CellManager.redValues.get(i);
+		for (int i = 0; i < alred.size(); i++) {
+			Cell c = alred.get(i);
 			if (getDistance(c) <= attackRadius && !(c instanceof SickCell)) {
 				c.decrementHealth(attack);
 				// g = canvas.getGraphics();
@@ -179,9 +181,9 @@ public class Virus implements Locatable {
 
 		if (attacking)
 			return;
-
-		for (int i = 0; i < CellManager.whiteValues.size(); i++) {
-			Cell c = CellManager.whiteValues.get(i);
+		ArrayList<Cell> alwhite = CellManager.getWhiteValues();
+		for (int i = 0; i < alwhite.size(); i++) {
+			Cell c = alwhite.get(i);
 			if (getDistance(c) <= attackRadius) {
 				c.decrementHealth(attack);
 				// g = canvas.getGraphics();

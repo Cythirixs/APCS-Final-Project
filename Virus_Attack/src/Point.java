@@ -1,3 +1,4 @@
+package src;
 /**
  * This is a helper class used to create positions of the redCell.
  */
