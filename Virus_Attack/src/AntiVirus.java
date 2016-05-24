@@ -38,14 +38,14 @@ public class AntiVirus implements Locatable
         this.x = x;
         this.y = y;
         speed = 5;
-        attack = 1;// 2
-        health = 5;// 100
+        attack = 1000;// 2
+        health = 200;// 100
 
         width = 15;
         height = 15;
         move = true;
 
-        attackRadius = 100;
+        attackRadius = 1000;
     }
 
 
@@ -78,6 +78,12 @@ public class AntiVirus implements Locatable
 
     public void update( Graphics g, int xOffset, int yOffset )
     {
+    //    int a = (int)(Math.random()*4.0);
+     //   attack = 0;
+    //    if (a == 3)
+    //    {
+    //        attack =1;
+     //   }
         if(!follow) {
             for (int i = 0; i < VirusGroupManager.groups.get(VirusGroupManager.currentGroup).size(); i++) {
                 Virus v = VirusGroupManager.groups.get(VirusGroupManager.currentGroup).getVirus(i);
@@ -97,6 +103,7 @@ public class AntiVirus implements Locatable
             setCoord(currentFollowVirus.getX(), currentFollowVirus.getY());
             follow(g,xOffset,yOffset);
         }
+     //   attack = 1;
     }
 
     private void follow(Graphics g,int xOffset,int yOffset) {

@@ -135,7 +135,7 @@ public class VirusGroup {
 	 * @return returns the removed virus
 	 */
 	public Virus remove(int n) {
-		return viruses.remove(n);
+		return viruses.remove(n-1);
 	}
 
 	/**
