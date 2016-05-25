@@ -1,4 +1,5 @@
-package Virus_Attack.src;
+package src;
+
 
 import java.awt.*;
 import java.awt.Canvas;
